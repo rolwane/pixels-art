@@ -26,7 +26,6 @@ function changeColor(e) {
 
 function clearBoard() {
   const allPixels = document.querySelectorAll('.pixel');
-
   for (const pixel of allPixels) {
     pixel.style.backgroundColor = 'white';
   }
