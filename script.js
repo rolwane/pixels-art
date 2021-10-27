@@ -1,14 +1,16 @@
 // função que gera os pixels no pixel-board
 function generatePixels(quantidade) {
   const pai = document.querySelector('#pixel-board');
-  for (let i = 0; i < quantidade; i += 1) {
+  pai.innerHTML = '';
+  pai.style.width = `${quantidade * 40}px`;
+  for (let i = 0; i < quantidade * quantidade; i += 1) {
     const pixel = document.createElement('span');
     pixel.classList.add('pixel');
     pai.appendChild(pixel);
   }
 }
 // chamando a função para gerar 25 pixels no pixel-board
-generatePixels(25);
+generatePixels(5);
 
 function colorSelect(e) {
   if (e.target.id !== 'color-palette') {
@@ -32,6 +34,22 @@ function clearBoard() {
   });
 }
 
+function changeBoard() {
+  const n = document.querySelector('#board-size').value;
+  if (n === '') {
+    alert('Board inválido!');
+    return;
+  }
+  if (n < 5) {
+    generatePixels(5);
+  } else if (n > 50) {
+    generatePixels(50);
+  } else {
+    generatePixels(n);
+  }
+}
+
 document.querySelector('#color-palette').addEventListener('click', colorSelect);
 document.querySelector('#pixel-board').addEventListener('click', changeColor);
 document.querySelector('#clear-board').addEventListener('click', clearBoard);
+document.querySelector('#generate-board').addEventListener('click', changeBoard);
