@@ -49,6 +49,23 @@ function changeBoard() {
   }
 }
 
+function random() {
+  return Math.floor(Math.random() * 255 + 1);
+}
+
+function generateColors() {
+  const colors = document.querySelectorAll('.color');
+  for (let i = 1; i < 4; i += 1) {
+    const r = random();
+    const g = random();
+    const b = random();
+    colors[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    colors[i].setAttribute('data-color', `rgb(${r}, ${g}, ${b})`);
+  }
+}
+
+generateColors();
+
 document.querySelector('#color-palette').addEventListener('click', colorSelect);
 document.querySelector('#pixel-board').addEventListener('click', changeColor);
 document.querySelector('#clear-board').addEventListener('click', clearBoard);
