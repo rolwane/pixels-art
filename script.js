@@ -26,9 +26,10 @@ function changeColor(e) {
 
 function clearBoard() {
   const allPixels = document.querySelectorAll('.pixel');
-  for (const pixel of allPixels) {
-    pixel.style.backgroundColor = 'white';
-  }
+  allPixels.forEach((pixel) => {
+    const stylePixel = pixel.style;
+    stylePixel.backgroundColor = 'white';
+  });
 }
 
 document.querySelector('#color-palette').addEventListener('click', colorSelect);
