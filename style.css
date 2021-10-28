@@ -83,6 +83,16 @@ header {
   gap: 10px;
 }
 
+#generate-board {
+  padding: 13px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(47, 193, 140);
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
 #board-size {
   padding: 10px;
   border: none;
@@ -92,14 +102,4 @@ header {
   font-size: 16px;
   width: 100%;
   max-width: 150px;
-}
-
-#generate-board {
-  padding: 13px;
-  border: none;
-  border-radius: 6px;
-  background-color: rgb(47, 193, 140);
-  font-weight: 700;
-  color: white;
-  cursor: pointer;
 }
